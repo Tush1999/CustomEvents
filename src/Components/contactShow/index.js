@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-export default class displayList extends Component {
+export default class ContactShow extends Component {
   handleDelete = (id) => {
     this.props.delete(id);
   };

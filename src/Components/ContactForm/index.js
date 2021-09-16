@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Form from "../Form/index";
-import Show from "../Show/index";
+import contactList from "../contactList/index";
 import "./style.css";
 
 export default class ContactForm extends Component {
@@ -24,7 +24,7 @@ export default class ContactForm extends Component {
       <React.Fragment>
         <div className="search-div"> </div>
         <Form add={this.addData} />
-        <Show data={this.state.list} updateList={this.updateList} />
+        <contactList data={this.state.list} updateList={this.updateList} />
       </React.Fragment>
     );
   }
