@@ -10,9 +10,10 @@ export default class Form extends Component {
       lastName: "",
       email: "",
       id: "",
-      firstNameError:"",
-      lastNameError:"",
-      emailError:""}
+      firstNameError: "",
+      lastNameError: "",
+      emailError: "",
+    };
 
     this.initialState = this.state;
   }
@@ -22,40 +23,35 @@ export default class Form extends Component {
     });
   };
 
-  checkFirstName=()=>{
-    this.formIsValid=true
+  checkFirstName = () => {
+    this.formIsValid = true;
     if (!this.state.firstName) {
-      this.setState({firstNameError:"First Name field is required"});
-      this.formIsValid=false;
-    }
-    else
-    this.setState({firstNameError:""})
-    return this.formIsValid
-  }
-  checkLastName=()=>{
-    this.formIsValid=true
+      this.setState({ firstNameError: "First Name field is required" });
+      this.formIsValid = false;
+    } else this.setState({ firstNameError: "" });
+    return this.formIsValid;
+  };
+  checkLastName = () => {
+    this.formIsValid = true;
     if (!this.state.lastName) {
-      this.setState({lastNameError:"Last Name field is required"});
-      this.formIsValid=false
-    }
-    else
-    this.setState({lastNameError:""})
-    return this.formIsValid
-  }
-  checkEmail=()=>{
-    this.formIsValid=true
+      this.setState({ lastNameError: "Last Name field is required" });
+      this.formIsValid = false;
+    } else this.setState({ lastNameError: "" });
+    return this.formIsValid;
+  };
+  checkEmail = () => {
+    this.formIsValid = true;
     if (!this.state.email) {
-      this.setState({emailError:"Email field is required"});
-      this.formIsValid=false;
+      this.setState({ emailError: "Email field is required" });
+      this.formIsValid = false;
+    } else {
+      this.setState({ emailError: "" });
     }
-    else{
-      this.setState({emailError:""})
-    }
-    return this.formIsValid
-  }
+    return this.formIsValid;
+  };
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.checkFirstName() && this.checkLastName()&& this.checkEmail()) {
+    if (this.checkFirstName() && this.checkLastName() && this.checkEmail()) {
       this.props.add({ ...this.state, id: uuid_v4() });
       this.setState(this.initialState);
     }

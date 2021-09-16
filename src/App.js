@@ -1,9 +1,9 @@
-import ContactForm from './Component/ContactForm/index';
+import ContactList from './Components/contactList/index';
 
 
 function App() {
   return (
-    <ContactForm />
+    <ContactList />
   );
 }
 
